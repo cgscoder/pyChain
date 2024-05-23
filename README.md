@@ -12,13 +12,19 @@ A python proof of work blockchain
 
 ### Road Map & Work Log
 
-- [ ] Initialize Repo and IDE
+- [x] Initialize Repo and IDE
 - [ ] Setup basic file structure
 - [ ] Write a Design and Development Document
-- [ ] Setup a venv and import dependencies
+- [x] Setup a venv and import dependencies
+- [x] Build Block and Blockchain classes
+- [x] Build miners
+- [ ] Verifying valid blockchains
+- [ ] Flask implementation
 
 ### Work Log
 
 Date | Progress | Next Steps | Version
 -----|-------------|--------|------
 22/05/24 | Initialized github repo and project file | Add Design and Dev Doc | 0.1.0
+22/05/24 | built Block and Blockchain classes | add D&D docs | 0.1.1
+23/05/24 | added mining function | add D&D docs | 0.1.2
