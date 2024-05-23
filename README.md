@@ -28,3 +28,4 @@ Date | Progress | Next Steps | Version
 22/05/24 | Initialized github repo and project file | Add Design and Dev Doc | 0.1.0
 22/05/24 | built Block and Blockchain classes | add D&D docs | 0.1.1
 23/05/24 | added mining function | add D&D docs | 0.1.2
+24/05/24 | added valid check :fire: | flask Implementation | 0.1.3
