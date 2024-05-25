@@ -18,8 +18,9 @@ A python proof of work blockchain
 - [x] Setup a venv and import dependencies
 - [x] Build Block and Blockchain classes
 - [x] Build miners
-- [ ] Verifying valid blockchains
-- [ ] Flask implementation
+- [x] Verifying valid blockchains
+- [x] Flask implementation
+- [ ] MySQL Access
 
 ### Work Log
 
@@ -29,3 +30,4 @@ Date | Progress | Next Steps | Version
 22/05/24 | built Block and Blockchain classes | add D&D docs | 0.1.1
 23/05/24 | added mining function | add D&D docs | 0.1.2
 24/05/24 | added valid check :fire: | flask Implementation | 0.1.3
+25/05/24 | hooked up DB in app.py script :floppy_disk: | DB Access | 0.1.4

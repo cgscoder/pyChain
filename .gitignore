@@ -1,3 +1,6 @@
+# Env variables
+passwords.py
+
 # Ignore virtual environment directory
 venv/
 
