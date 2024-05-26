@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pyChain</title>
+</head>
+<body>
+    <h1>Sign Up!</h1>
+    <div class="container">
+        {% include 'includes/_messages.html' %}
+        {% from "includes/_formhelpers.html" import render_field %}
+        <form method="POST" action="">
+            <div class="form-label-group">
+                <input type="text" placeholder="Full Name" name="name" value={{request.form.name}}>
+                <label>Full Name</label>
+            </div>
+            <div class="form-label-group">
+                <input type="text" placeholder="Username" name="username" value={{request.form.username}}>
+                <label>Userame</label>
+            </div>
+            <div class="form-label-group">
+                <input type="text" placeholder="email" name="email" value={{request.form.email}}>
+                <label>Email</label>
+            </div>
+            <div class="form-label-group">
+                <input type="text" placeholder="Password" name="password" value={{request.form.password}}>
+                <label>Password</label>
+            </div>
+            <div class="form-label-group">
+                <input type="text" placeholder="Confirm Password" name="confirm" value={{request.form.confirm}}>
+                <label>Confirm Password</label>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>
+
+

@@ -7,8 +7,12 @@ A python proof of work blockchain
 ## Useful Links
 
 - [Python Cryptocurrency Series - Will Assad][def1]
+- [Will Assad's GitHub][def2]
+- [Block Chain Theory - Geeks][def3]
 
 [def1]: https://www.youtube.com/watch?v=b41TVaLwhKc&list=PLtCKS3CuBDYV_Vyl1ZH2Je8gSdXfQf4e3
+[def2]: https://github.com/willassad/cryptocurrencypython/tree/main
+[def3]: https://www.geeksforgeeks.org/blockchain-structure/
 
 ### Road Map & Work Log
 
@@ -21,6 +25,7 @@ A python proof of work blockchain
 - [x] Verifying valid blockchains
 - [x] Flask implementation
 - [ ] MySQL Access
+- [ ] Registration Page
 
 ### Work Log
 
@@ -31,3 +36,4 @@ Date | Progress | Next Steps | Version
 23/05/24 | added mining function | add D&D docs | 0.1.2
 24/05/24 | added valid check :fire: | flask Implementation | 0.1.3
 25/05/24 | hooked up DB in app.py script :floppy_disk: | DB Access | 0.1.4
+26/05/24 | Register working, D&D draft :scroll: | add login | 0.1.5
