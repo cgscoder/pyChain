@@ -24,8 +24,9 @@ A python proof of work blockchain
 - [x] Build miners
 - [x] Verifying valid blockchains
 - [x] Flask implementation
-- [ ] MySQL Access
-- [ ] Registration Page
+- [x] MySQL Access
+- [x] Registration Page
+- [ ] Login Page
 
 ### Work Log
 

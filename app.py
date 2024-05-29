@@ -4,6 +4,7 @@
 from flask import Flask, render_template, flash, redirect, url_for, session, request, logging
 from passlib.hash import sha256_crypt
 from flask_mysqldb import MySQL
+from functools import wraps
 
 from passwords import _mysql_password
 from sql_helpers import *
@@ -20,6 +21,16 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql = MySQL(app)
 
+def is_logged_in(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            flash("Login", 'danger')
+            return redirect(url_for('login'))
+    return wrap
+
 def log_in_user(username):
     users = Table("users", "name", "username", "email", "password")
     user = users.getone("username", username)
@@ -31,10 +42,35 @@ def log_in_user(username):
     
     
 #Routes
-@app.route("/login")
+@app.route("/login", methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        candidate = request.form['password']
+        
+        users = Table("users", "name", "username", "email", "password")
+        user = users.getone("username", username)
+        accPass = user.get('password')
+        
+        if accPass is None:
+            flash("Username not found", 'danger')
+            return redirect(url_for('login'))
+        else:
+            if sha256_crypt.verify(candidate, accPass):
+                log_in_user(username)
+                flash("Login Successful", 'success')
+                return redirect(url_for('dashboard'))
+            else:
+                flash("Password does not match", 'danger')
+                return redirect(url_for('login'))
+        
     return render_template('login.html')
 
+@app.route("/logout")
+def logout():
+    session.clear()
+    flash("Logged out", 'success')
+    return redirect(url_for('login'))
 
 @app.route("/register", methods = ['GET', 'POST'])
 def register():
@@ -58,6 +94,7 @@ def register():
     return render_template('register.html', form=form)
 
 @app.route("/dashboard")
+@is_logged_in
 def dashboard():
     return render_template('dashboard.html', session=session)
 
