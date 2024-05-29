@@ -27,6 +27,8 @@ A python proof of work blockchain
 - [x] MySQL Access
 - [x] Registration Page
 - [ ] Login Page
+- [ ] Converting Blockchains
+- [ ] Valid Transactions
 
 ### Work Log
 
@@ -38,3 +40,4 @@ Date | Progress | Next Steps | Version
 24/05/24 | added valid check :fire: | flask Implementation | 0.1.3
 25/05/24 | hooked up DB in app.py script :floppy_disk: | DB Access | 0.1.4
 26/05/24 | Register working, D&D draft :scroll: | add login | 0.1.5
+29/05/24 | Login/Logout functions & pages secured | Convert Chains | 0.1.6
