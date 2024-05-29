@@ -26,8 +26,8 @@ A python proof of work blockchain
 - [x] Flask implementation
 - [x] MySQL Access
 - [x] Registration Page
-- [ ] Login Page
-- [ ] Converting Blockchains
+- [x] Login Page
+- [x] Converting Blockchains - issue with the deletall function(recreate table)
 - [ ] Valid Transactions
 
 ### Work Log
@@ -41,3 +41,4 @@ Date | Progress | Next Steps | Version
 25/05/24 | hooked up DB in app.py script :floppy_disk: | DB Access | 0.1.4
 26/05/24 | Register working, D&D draft :scroll: | add login | 0.1.5
 29/05/24 | Login/Logout functions & pages secured | Convert Chains | 0.1.6
+29/05/24 | Blockchain cleanup :moneybag: | Validation | 0.1.7

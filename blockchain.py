@@ -14,14 +14,12 @@ def updateHash(*args):
 print(updateHash("Hello World"))
 
 class Block():
-    data = None
-    hash = None
-    nonce = 0
-    previous_hash = "0" * 64
-    
-    def __init__(self, data, number=0):
+
+    def __init__(self, data=None, number=0, previous_hash="0"*64,  nonce=0):
         self.data = data
         self.number = number
+        self.previous_hash = previous_hash
+        self.nonce = nonce
     
     def hash(self):
         return updateHash(
@@ -46,8 +44,8 @@ class Block():
 class Blockchain():
     difficulty = 4
     
-    def __init__(self, chain=[]):
-        self.chain = chain
+    def __init__(self):
+        self.chain = []
 
     def add(self, block):
         # self.chain.append({

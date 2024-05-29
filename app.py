@@ -67,6 +67,7 @@ def login():
     return render_template('login.html')
 
 @app.route("/logout")
+@is_logged_in
 def logout():
     session.clear()
     flash("Logged out", 'success')
@@ -100,9 +101,10 @@ def dashboard():
 
 @app.route("/")
 def index():
-    users = Table("users", "name", "username", "email", "password")
+    #users = Table("users", "name", "username", "email", "password")
     #users.insert("Jake", "rake-handel", "jh@gmail.com", "hash")
     #users.deleteall()
+    test_blockchain()
     return render_template('index.html')
 
 # Run server
