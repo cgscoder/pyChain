@@ -8,5 +8,20 @@
 <body>
     <h1>Dashboard</h1>
     <h2>Welcome, {{session.get('username')}}</h2>
+
+    <table>
+        {% for block in blockchain %}
+            <tr>
+                {{ block.number }}
+            <tr>
+            <tr>
+                {{ block.data }}
+            <tr>
+            <tr>
+                {{ block.hash }}
+            <tr>
+        {% endfor %}
+    </table>
+    <p> Last updated at {{ ct }}</p>
 </body>
 </html>

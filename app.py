@@ -10,6 +10,8 @@ from passwords import _mysql_password
 from sql_helpers import *
 from forms import *
 
+import time
+
 app = Flask(__name__)
 
 # DB Access
@@ -66,6 +68,40 @@ def login():
         
     return render_template('login.html')
 
+@app.route("/transaction", methods = ['GET', 'POST'])
+@is_logged_in
+def transaction():
+    form = SendMoneyForm(request.form)
+    balance = get_balance(session.get('username'))
+    
+    if request.method == 'POST':
+        try:
+            send_money(session.get('username'), form.username.data, form.amount.data)
+            flash("Crypto sent!", 'success')
+        except Exception as e:
+            flash(str(e), 'danger')
+        
+        return redirect(url_for('transaction'))
+    
+    return render_template('transaction.html', balance=balance, form=form, page='transaction')
+
+@app.route("/buy", methods=['GET', 'POST'])
+@is_logged_in
+def buy():
+    form = BuyForm(request.form)
+    balance = get_balance(session.get('username'))
+    
+    if request.method == 'POST':
+        try:
+            send_money("BANK", session.get('username'), form.amount.data)
+            flash("Crypto purchased!", 'success')
+        except Exception as e:
+            flash(str(e), 'danger')
+            
+        return redirect(url_for('dashboard'))     
+    
+    return render_template('buy.html', balance=balance, form=form, buy='buy')    
+
 @app.route("/logout")
 @is_logged_in
 def logout():
@@ -97,14 +133,14 @@ def register():
 @app.route("/dashboard")
 @is_logged_in
 def dashboard():
-    return render_template('dashboard.html', session=session)
+    
+    blockchain = get_blockchain().chain
+    ct = time.strftime("%I:%M %p")
+    return render_template('dashboard.html', session=session, ct=ct, blockchain=blockchain, page='dashboard')
 
 @app.route("/")
 def index():
-    #users = Table("users", "name", "username", "email", "password")
-    #users.insert("Jake", "rake-handel", "jh@gmail.com", "hash")
-    #users.deleteall()
-    test_blockchain()
+    #send_money("jetscholar", "jrizz", 20)
     return render_template('index.html')
 
 # Run server

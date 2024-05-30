@@ -9,10 +9,12 @@ A python proof of work blockchain
 - [Python Cryptocurrency Series - Will Assad][def1]
 - [Will Assad's GitHub][def2]
 - [Block Chain Theory - Geeks][def3]
+- [CGSCoder Github pyChain Repo][def4]
 
 [def1]: https://www.youtube.com/watch?v=b41TVaLwhKc&list=PLtCKS3CuBDYV_Vyl1ZH2Je8gSdXfQf4e3
 [def2]: https://github.com/willassad/cryptocurrencypython/tree/main
 [def3]: https://www.geeksforgeeks.org/blockchain-structure/
+[def4]: https://github.com/jetscholar/pyChain
 
 ### Road Map & Work Log
 
@@ -28,7 +30,11 @@ A python proof of work blockchain
 - [x] Registration Page
 - [x] Login Page
 - [x] Converting Blockchains - issue with the deletall function(recreate table)
-- [ ] Valid Transactions
+- [x] Valid Transactions
+- [x] Transactions
+- [x] Buy page
+- [ ] Site styling
+- [ ] Debugging: flash messages
 
 ### Work Log
 
@@ -42,3 +48,4 @@ Date | Progress | Next Steps | Version
 26/05/24 | Register working, D&D draft :scroll: | add login | 0.1.5
 29/05/24 | Login/Logout functions & pages secured | Convert Chains | 0.1.6
 29/05/24 | Blockchain cleanup :moneybag: | Validation | 0.1.7
+31/05/24 | Python logic complete | file structuring | 0.1.8

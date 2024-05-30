@@ -1,0 +1,11 @@
+{% include 'includes/_messages.html' %}
+    <p>Your current balance is {{ balance }} PYC</p>
+    {% from "includes/_formhelpers.html" import render_field %}
+    <form method="POST" action="">
+        <div class="form-group">
+            {{render_field(form.amount)}}
+        </div>
+        <br>
+        <p><input type="submit" class="btn btn-primary" value="Buy Now"></p>
+    </form>
+    <button onclick="window.location.href='/dashboard'">Dashboard</button>
